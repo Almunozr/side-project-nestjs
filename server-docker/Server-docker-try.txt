@@ -1,0 +1,18 @@
+https://hub.docker.com/r/halverneus/static-file-server
+descargo imagen:
+docker pull halverneus/static-file-server
+
+ejecuto imagen y mapeo volumen local
+docker run -d -p 8081:80 -v "$(pwd)/mis-archivos:/web" halverneus/static-file-server
+docker run -v "$(pwd)/mis-archivos:/web" halverneus/static-file-server
+
+
+doy permisos a directorio host:
+sudo chown -R $USER:$USER mis-archivos
+
+Desactivo cortafuegos:
+sudo ufw disable
+para activar: sudo ufw enable
+
+
+
